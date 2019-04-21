@@ -4,20 +4,23 @@ var deleteBtn = document.getElementsByClassName("delete");
 var ul = document.querySelector("ul");
 var list_items = document.querySelectorAll('li');
 
-
+// return input length
 function inputLength() {
 	return input.value.length;
 }
 
+// to activate delete button
 for (var i = 0; i < deleteBtn.length; i++) {
 	deleteBtn[i].addEventListener("click", removeSelectedItem);
 }
 
+// to remove selected item -- from stackoverflow
 function removeSelectedItem(event) {
 	event.target.removeEventListener("click", removeSelectedItem);
 	event.target.parentNode.remove();
 }
 
+// to create li element -- from stackoverflow
 function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
